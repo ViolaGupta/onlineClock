@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function startTime() {
+    var today=new Date();
+    var h=today.getHours();
+    var m=today.getMinutes();
+    var s=today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML = h+":"+m+":"+s;
+    var t = setTimeout(function(){startTime()},500);
+}
+
+function checkTime(i) {
+    if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+
+</script>
+<style>
+    body{
+        height:100%;
+        background:-webkit-linear-gradient(top,rgba(255,0,0,0),rgba(0,0,0,255.6)) fixed;
+    }
+#txt{
+    padding:45px;
+    font-size:90px;
+    padding-left:130px;
+ 
+}
+.clock{
+    float:center;
+    margin-top:130px;
+    margin-left:400px;
+    color:red;
+    background-image:url('1.jpg');
+    height:200px;
+    width:550px;
+    background-size:cover;
+}
+#sound{
+    margin-left:580px;
+    margin-top:20px;
+    float:center;
+}
+
+.buttons li{
+    display:inline;
+    
+}
+</style>
+</head>
+
+<body onload="startTime()">
+    <div class="clock">
+        <div id="txt">
+        </div>
+    </div>
+    <div class="sound_icon">
+        <audio controls id="sound" autopplay loop>
+            <source src="1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+        </audio>
+       
+    </div>
+    <div class="buttons">
+        <ul>
+          <li><button type="button">Set Alarm</button></li>
+          <li><button type="button">Stop Alarm</button></li>
+          </ul>
+    </div>
+</body>
+</html>
