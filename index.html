@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css?family=Roboto:900">
 <script>
+
      var today=new Date();
-function startTime() {
+     function startTime() {
 
     var h=today.getHours();
     var m=today.getMinutes();
@@ -19,10 +22,12 @@ function checkTime(i) {
     if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
     return i;
 }
+
 function checkHrs(i) {
     if (i>12) {i = i%12}; //convert to 12 hour time
     return i;
 }
+
 function setAlarm(){
 
     var hour = document.getElementById('hour').value;
@@ -48,6 +53,9 @@ function setAlarm(){
 
     }
 #txt{
+  font-family: Roboto;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.75);
     padding:45px;
     font-size:90px;
     padding-left:130px;
@@ -107,6 +115,7 @@ function setAlarm(){
 
 }
 .displayAlarm{
+
     float:center;
     margin-top:20px;
     margin-left:565px;
