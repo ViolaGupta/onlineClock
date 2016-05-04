@@ -8,6 +8,7 @@ function startTime() {
     var h=today.getHours();
     var m=today.getMinutes();
     var s=today.getSeconds();
+    h = checkHrs(h);
     m = checkTime(m);
     s = checkTime(s);
     document.getElementById('txt').innerHTML = h+":"+m+":"+s;
@@ -18,18 +19,25 @@ function checkTime(i) {
     if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
     return i;
 }
+function checkHrs(i) {
+    if (i>12) {i = i%12}; //convert to 12 hour time
+    return i;
+}
 function setAlarm(){
 
     var hour = document.getElementById('hour').value;
     var min = document.getElementById('min').value;
     var daytime = document.getElementById('daytime').value;
-    document.getElementById('displayAlarm').innerHTML = "You have set your alarm for "+hour+":"+min+":" +daytime;
-    // var timeForAlarm = (date.getHours() + hour) + (date.getMinutes()+min) ;
-    if (hour==today.getHours() && today==date.getMintues())
+
+//Uncommenting this part makes the time go away.
+
+/*    document.getElementById('displayAlarm').innerHTML = "You have set your alarm for "+hour+":"+min+":" +daytime;
+    var timeForAlarm = (date.getHours() + hour) + (date.getMinutes()+min) ;
+    if (hour==today.getHours() && today==date.getMinutes())
     {<audio controls id="alarm"  loop>
         <source src="alarm.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
-        </audio> }
+        </audio> }*/
 }
 </script>
 <style>
