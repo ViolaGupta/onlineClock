@@ -3,9 +3,9 @@ input:focus, textarea:focus {
 }
 
 body{
-    background: #4CB8C4; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #4CB8C4 , #3CD3AD); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #4CB8C4 , #3CD3AD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #4C7CC4; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #4C7CC4 , #3CD3AD); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #4C7CC4 , #3CD3AD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 #txt{
@@ -16,9 +16,8 @@ padding: 20px;
 padding-bottom: 10px;
 font-weight: 900;
 color: rgba(0, 0, 0, 0.75);
-font-size:90px;
+font-size:44px;
 }
-
 .clock{
 z-index: 3;
 margin: auto;
@@ -90,8 +89,8 @@ margin-top:20px;
 .displayAlarm{
 
 margin-top:20px;
-width:40px;
-height:40px;
+margin-left:520px;
+width:100%;
 }
 @media only screen and (max-width: 768px) {
     .clock {
@@ -104,7 +103,7 @@ height:40px;
         width:auto;
     }
     body{
-    background: linear-gradient(to bottom, #4CB8C4 , #3CD3AD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to bottom, #4C7CC4 , #3CD3AD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
 }
 

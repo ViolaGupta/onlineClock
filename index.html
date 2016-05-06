@@ -3,53 +3,112 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:900">
 		<link rel="stylesheet" type="text/css" href="mystyle.css">
-		<script>
-
-			function startTime() {
+<script>
+var myalarm;
+			function startTime() 
+			{
 			    var today = new Date();
-			    var h = today.getHours();
+			    var h1 = today.getHours();
 			    var m = today.getMinutes();
 			    var s = today.getSeconds();
-			    h = checkHrs(h);
+			    h = checkHrs(h1);
 			    m = checkTime(m);
 			    s = checkTime(s);
+			    if(h1<12){
 			    document.getElementById('txt').innerHTML =
-			    h + ":" + m + ":" + s;
+			    h + ":" + m + ":" + s + " AM";}
+			    else{
+			    document.getElementById('txt').innerHTML =
+			    h + ":" + m + ":" + s + " PM";}
 			    var t = setTimeout(startTime, 500);
 			}
-			function checkTime(i) {
+			
+			function soundAlarm()
+			{
+				var audio = new Audio('alarm.mp3');
+				audio.play();
+				setTimeout(
+				function(){
+				if(confirm("ALARM") == true) 
+				{
+        				audio.pause();
+    				} 
+    				else 
+    				{
+        				audio.pause();
+        			}
+        			},500);
+				
+			}
+			
+			
+			function checkAlarm()
+			{
+				var today = new Date();
+				var hrs = today.getHours();
+				var mins = today.getMinutes();
+				var sec = today.getSeconds();
+				var h = document.getElementById('hour').value;
+			    	var m = document.getElementById('min').value;
+			    	var daytime = document.getElementById('daytime').value;
+			    	var audio = document.getElementById('sound');
+				if(h == hrs && m == mins && sec==0)
+				{
+					soundAlarm();
+					cancelAlarm();
+					return;
+				}
+				myalarm = setTimeout(checkAlarm, 500);
+			}
+			
+			function checkTime(i) 
+			{
 			    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
 			    return i;
 			}
+			
 
-			function checkHrs(i) {
-			    if (i>12) {i = i%12}; //convert to 12 hour time
+			function checkHrs(i) 
+			{
+				if(i==0)	{i=12;}
+			    else if (i>12) {i = i%12}; //convert to 12 hour time
 			    return i;
 			}
 
-			function setAlarm(){
-
+			function setAlarm()
+			{
+			    
 			    var hour = document.getElementById('hour').value;
-			    var min = document.getElementById('min').value;
+			    var minute = document.getElementById('min').value;
 			    var daytime = document.getElementById('daytime').value;
+			    var audio = document.getElementById('sound');
+			    document.getElementById('displayAlarm').innerHTML = "The alarm is successfully set for " + hour + ":" + minute + " " + daytime; 
+			    
+			    checkAlarm();
+			    
+        		}
+        		
+        		function cancelAlarm()
+        		{
+        			clearTimeout(myalarm);
+        			document.getElementById('displayAlarm').innerHTML = "";
+        		}
 
-          var audio = document.getElementById('sound');
-        }
+     			function muteSwap()
+     			{
+        			if (document.getElementById('sound').muted == true)
+        			{
+          				document.getElementById('sound').muted = false;
+          				document.getElementById("muteicon").src = "Unmute.svg"; //=:assignment
+				}
+				else
+				{
+					document.getElementById('sound').muted = true;
+					document.getElementById("muteicon").src = "Mute.svg";
+				}
+			}
 
-      function muteSwap(){
-        if (document.getElementById('sound').muted == true)
-        {
-          document.getElementById('sound').muted = false;
-          document.getElementById("muteicon").src = "Unmute.svg"; //=:assignment
-
-        }
-else
-{ document.getElementById('sound').muted = true;
-document.getElementById("muteicon").src = "Mute.svg";
-}
-}
-
-		</script>
+</script>
 	</head>
 	<body onload="startTime()">
 		<div class="header-fixed">
@@ -57,7 +116,7 @@ document.getElementById("muteicon").src = "Mute.svg";
 			Tocky
       <div class="right">
       <button id="mute" class="hvr-grow-shadow" type="button" onClick="muteSwap()">
-        <div id="show"> <img id="muteicon" src="Mute.svg" height="28px" width="28px"></div>
+        <div id="show"> <img id="muteicon" src="Unmute.svg" height="28px" width="28px"></div> <!-- Changed the initial icon to unmuted -->
 </button>
 </div>
 
@@ -165,18 +224,18 @@ document.getElementById("muteicon").src = "Mute.svg";
 						</li>
 						<li>
 							<select id="daytime">
-								<option value="am">AM</option>
-								<option value="pm">PM</option>
+								<option value="AM">AM</option>
+								<option value="PM">PM</option>
 							</select>
 						</li>
 					</ul>
 				</div>
 			</div>
 		</div>
-		<h1 id="displayAlarm"></h1>
+		<h3 id="displayAlarm" class="displayAlarm"></h3>
 		<div id="footer">
 			<div id="center">
-				<p>	Made with heart in New Delhi by Gyan Lakhwani + Manvendra Singh</p>
+				<p>	Made with love in New Delhi by Gyan Lakhwani + Manvendra Singh</p>
 			</div>
 		</div>
 		<!-- #footer -->
