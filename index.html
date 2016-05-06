@@ -51,28 +51,26 @@ function setAlarm(){
   <div class="header-fixed">
 TICK TOCK CLOCK
 </div>
+
     <div class="clock">
-<div class="bullshit">
+<div class="center">
         <div id="txt">
         </div>
       </div>
 
-    </div>
-    <div class="bullshit">
+    <div class="center">
 
     <div class="sound_icon">
-        <audio controls id="sound" autoplay loop>
+        <audio id="sound" autoplay loop>
             <source src="Tick-tock.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
         </audio>
 
     </div>
-    <div class="buttons">
-        <ul>
-          <li><button type="button" onClick="setAlarm()">Set Alarm</button></li>
-          <li><button type="button" onclick="cancelAlarm()">Cancel Alarm</button></li>
-          </ul>
-    </div>
+  <center>
+<button class="buttons" type="button" onClick="setAlarm()">SET ALARM</button>
+<button class="buttons" type="button" onclick="cancelAlarm()">CANCEL ALARM</button>
+</center>
     <div class="timeList">
         <ul>
             <li>
@@ -165,6 +163,13 @@ TICK TOCK CLOCK
         </ul>
       </div>
     </div>
+
+    </div>
     <h1 id="displayAlarm"></h1>
+    <div id="footer">
+      <div id="center">
+        <p>	Made with heart in New Delhi by Gyan Lakhwani + Manvendra Singh</p>
+      </div>
+    </div><!-- #footer -->
 </body>
 </html>
