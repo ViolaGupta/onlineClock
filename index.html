@@ -4,6 +4,7 @@
 		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:900">
 		<link rel="stylesheet" type="text/css" href="mystyle.css">
 		<script>
+
 			function startTime() {
 			    var today = new Date();
 			    var h = today.getHours();
@@ -32,22 +33,35 @@
 			    var min = document.getElementById('min').value;
 			    var daytime = document.getElementById('daytime').value;
 
-			//Uncommenting this part makes the time go away.
+          var audio = document.getElementById('sound');
+        }
 
-			/*    document.getElementById('displayAlarm').innerHTML = "You have set your alarm for "+hour+":"+min+":" +daytime;
-			    var timeForAlarm = (date.getHours() + hour) + (date.getMinutes()+min) ;
-			    if (hour==today.getHours() && today==date.getMinutes())
-			    {<audio controls id="alarm"  loop>
-			        <source src="alarm.mp3" type="audio/mpeg">
-			        Your browser does not support the audio element.
-			        </audio> }*/
-			}
+      function muteSwap(){
+        if (document.getElementById('sound').muted == true)
+        {
+          document.getElementById('sound').muted = false;
+          document.getElementById("muteicon").src = "Unmute.svg"; //=:assignment
+
+        }
+else
+{ document.getElementById('sound').muted = true;
+document.getElementById("muteicon").src = "Mute.svg";
+}
+}
+
 		</script>
 	</head>
 	<body onload="startTime()">
 		<div class="header-fixed">
 			<img src="tocky.svg" height="32px" width="32px">
 			Tocky
+      <div class="right">
+      <button id="mute" class="hvr-grow-shadow" type="button" onClick="muteSwap()">
+        <div id="show"> <img id="muteicon" src="Mute.svg" height="28px" width="28px"></div>
+</button>
+</div>
+
+
 		</div>
 		<div class="clock">
 			<div class="center">

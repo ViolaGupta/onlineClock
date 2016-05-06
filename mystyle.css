@@ -1,3 +1,7 @@
+input:focus, textarea:focus {
+    outline: none;
+}
+
 body{
     background: #4CB8C4; /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #4CB8C4 , #3CD3AD); /* Chrome 10-25, Safari 5.1-6 */
@@ -27,6 +31,11 @@ animation: pulse 5s infinite;
 height:auto;
 width:500px;
 background-size:cover;
+}
+
+.right {
+float: right;
+padding-right: 32px;
 }
 
 .header-fixed {
