@@ -1,175 +1,170 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:900">
-  <link rel="stylesheet" type="text/css" href="mystyle.css">
+	<head>
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:900">
+		<link rel="stylesheet" type="text/css" href="mystyle.css">
+		<script>
+			function startTime() {
+			    var today = new Date();
+			    var h = today.getHours();
+			    var m = today.getMinutes();
+			    var s = today.getSeconds();
+			    h = checkHrs(h);
+			    m = checkTime(m);
+			    s = checkTime(s);
+			    document.getElementById('txt').innerHTML =
+			    h + ":" + m + ":" + s;
+			    var t = setTimeout(startTime, 500);
+			}
+			function checkTime(i) {
+			    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+			    return i;
+			}
 
-<script>
+			function checkHrs(i) {
+			    if (i>12) {i = i%12}; //convert to 12 hour time
+			    return i;
+			}
 
-function startTime() {
-    var today = new Date();
-    var h = today.getHours();
-    var m = today.getMinutes();
-    var s = today.getSeconds();
-    h = checkHrs(h);
-    m = checkTime(m);
-    s = checkTime(s);
-    document.getElementById('txt').innerHTML =
-    h + ":" + m + ":" + s;
-    var t = setTimeout(startTime, 500);
-}
-function checkTime(i) {
-    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-    return i;
-}
+			function setAlarm(){
 
-function checkHrs(i) {
-    if (i>12) {i = i%12}; //convert to 12 hour time
-    return i;
-}
+			    var hour = document.getElementById('hour').value;
+			    var min = document.getElementById('min').value;
+			    var daytime = document.getElementById('daytime').value;
 
-function setAlarm(){
+			//Uncommenting this part makes the time go away.
 
-    var hour = document.getElementById('hour').value;
-    var min = document.getElementById('min').value;
-    var daytime = document.getElementById('daytime').value;
-
-//Uncommenting this part makes the time go away.
-
-/*    document.getElementById('displayAlarm').innerHTML = "You have set your alarm for "+hour+":"+min+":" +daytime;
-    var timeForAlarm = (date.getHours() + hour) + (date.getMinutes()+min) ;
-    if (hour==today.getHours() && today==date.getMinutes())
-    {<audio controls id="alarm"  loop>
-        <source src="alarm.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-        </audio> }*/
-}
-</script>
-</head>
-
-<body onload="startTime()">
-  <div class="header-fixed">
-TICK TOCK CLOCK
-</div>
-
-    <div class="clock">
-<div class="center">
-        <div id="txt">
-        </div>
-      </div>
-
-    <div class="center">
-
-    <div class="sound_icon">
-        <audio id="sound" autoplay loop>
-            <source src="Tick-tock.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-        </audio>
-
-    </div>
-  <center>
-<button class="buttons" type="button" onClick="setAlarm()">SET ALARM</button>
-<button class="buttons" type="button" onclick="cancelAlarm()">CANCEL ALARM</button>
-</center>
-    <div class="timeList">
-        <ul>
-            <li>
-        <select autofocus id="hour" >  <!-- add disabled effect enabled when clicked-->
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-        </select>
-           </li>
-            <li>
-                <select autofocus  id="min">  <!-- add disabled effect enabled when clicked-->
-                    <option value="00">00</option>
-                    <option value="01">01</option>
-                    <option value="02">02</option>
-                    <option value="03">03</option>
-                    <option value="04">04</option>
-                    <option value="05">05</option>
-                    <option value="06">06</option>
-                    <option value="07">07</option>
-                    <option value="08">08</option>
-                    <option value="09">09</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                    <option value="16">16</option>
-                    <option value="17">17</option>
-                    <option value="18">18</option>
-                    <option value="19">19</option>
-                    <option value="20">20</option>
-                    <option value="21">21</option>
-                    <option value="22">22</option>
-                    <option value="23">23</option>
-                    <option value="24">24</option>
-                    <option value="25">25</option>
-                    <option value="26">26</option>
-                    <option value="27">27</option>
-                    <option value="28">28</option>
-                    <option value="29">29</option>
-                    <option value="30">30</option>
-                    <option value="31">31</option>
-                    <option value="32">32</option>
-                    <option value="33">33</option>
-                    <option value="34">34</option>
-                    <option value="35">35</option>
-                    <option value="36">36</option>
-                    <option value="37">37</option>
-                    <option value="38">38</option>
-                    <option value="39">39</option>
-                    <option value="40">40</option>
-                    <option value="41">41</option>
-                    <option value="42">42</option>
-                    <option value="43">43</option>
-                    <option value="44">44</option>
-                    <option value="45">45</option>
-                    <option value="46">46</option>
-                    <option value="47">47</option>
-                    <option value="48">48</option>
-                    <option value="49">49</option>
-                    <option value="50">50</option>
-                    <option value="51">51</option>
-                    <option value="52">52</option>
-                    <option value="53">53</option>
-                    <option value="54">54</option>
-                    <option value="55">55</option>
-                    <option value="56">56</option>
-                    <option value="57">57</option>
-                    <option value="58">58</option>
-                    <option value="59">59</option>
-                </select>
-
-            </li>
-            <li>
-                <select id="daytime">
-                <option value="am">AM</option>
-                <option value="pm">PM</option>
-                </select>
-            </li>
-        </ul>
-      </div>
-    </div>
-
-    </div>
-    <h1 id="displayAlarm"></h1>
-    <div id="footer">
-      <div id="center">
-        <p>	Made with heart in New Delhi by Gyan Lakhwani + Manvendra Singh</p>
-      </div>
-    </div><!-- #footer -->
-</body>
+			/*    document.getElementById('displayAlarm').innerHTML = "You have set your alarm for "+hour+":"+min+":" +daytime;
+			    var timeForAlarm = (date.getHours() + hour) + (date.getMinutes()+min) ;
+			    if (hour==today.getHours() && today==date.getMinutes())
+			    {<audio controls id="alarm"  loop>
+			        <source src="alarm.mp3" type="audio/mpeg">
+			        Your browser does not support the audio element.
+			        </audio> }*/
+			}
+		</script>
+	</head>
+	<body onload="startTime()">
+		<div class="header-fixed">
+			<img src="tocky.svg" height="32px" width="32px">
+			Tocky
+		</div>
+		<div class="clock">
+			<div class="center">
+				<div id="txt">
+				</div>
+			</div>
+			<div class="center">
+				<div class="sound_icon">
+					<audio id="sound" autoplay loop>
+						<source src="Tick-tock.mp3" type="audio/mpeg">
+						Your browser does not support the audio element.
+					</audio>
+				</div>
+				<center>
+						<button class="hvr-grow-shadow" type="button" onClick="setAlarm()">SET ALARM</button>
+						<button class="hvr-grow-shadow" type="button" onclick="cancelAlarm()">CANCEL ALARM</button>
+				</center>
+				<div class="timeList">
+					<ul>
+						<li>
+							<select autofocus id="hour" >
+								<!-- add disabled effect enabled when clicked-->
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+							</select>
+						</li>
+						<li>
+							<select autofocus  id="min">
+								<!-- add disabled effect enabled when clicked-->
+								<option value="00">00</option>
+								<option value="01">01</option>
+								<option value="02">02</option>
+								<option value="03">03</option>
+								<option value="04">04</option>
+								<option value="05">05</option>
+								<option value="06">06</option>
+								<option value="07">07</option>
+								<option value="08">08</option>
+								<option value="09">09</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+								<option value="13">13</option>
+								<option value="14">14</option>
+								<option value="15">15</option>
+								<option value="16">16</option>
+								<option value="17">17</option>
+								<option value="18">18</option>
+								<option value="19">19</option>
+								<option value="20">20</option>
+								<option value="21">21</option>
+								<option value="22">22</option>
+								<option value="23">23</option>
+								<option value="24">24</option>
+								<option value="25">25</option>
+								<option value="26">26</option>
+								<option value="27">27</option>
+								<option value="28">28</option>
+								<option value="29">29</option>
+								<option value="30">30</option>
+								<option value="31">31</option>
+								<option value="32">32</option>
+								<option value="33">33</option>
+								<option value="34">34</option>
+								<option value="35">35</option>
+								<option value="36">36</option>
+								<option value="37">37</option>
+								<option value="38">38</option>
+								<option value="39">39</option>
+								<option value="40">40</option>
+								<option value="41">41</option>
+								<option value="42">42</option>
+								<option value="43">43</option>
+								<option value="44">44</option>
+								<option value="45">45</option>
+								<option value="46">46</option>
+								<option value="47">47</option>
+								<option value="48">48</option>
+								<option value="49">49</option>
+								<option value="50">50</option>
+								<option value="51">51</option>
+								<option value="52">52</option>
+								<option value="53">53</option>
+								<option value="54">54</option>
+								<option value="55">55</option>
+								<option value="56">56</option>
+								<option value="57">57</option>
+								<option value="58">58</option>
+								<option value="59">59</option>
+							</select>
+						</li>
+						<li>
+							<select id="daytime">
+								<option value="am">AM</option>
+								<option value="pm">PM</option>
+							</select>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<h1 id="displayAlarm"></h1>
+		<div id="footer">
+			<div id="center">
+				<p>	Made with heart in New Delhi by Gyan Lakhwani + Manvendra Singh</p>
+			</div>
+		</div>
+		<!-- #footer -->
+	</body>
 </html>
