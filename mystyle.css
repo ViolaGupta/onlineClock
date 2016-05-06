@@ -94,6 +94,7 @@ width:40px;
 height:40px;
 }
 @media only screen and (max-width: 768px) {
+
     .clock {
         width:auto;
     }
@@ -102,10 +103,9 @@ height:40px;
     }
     #txt {
         width:auto;
+        font-size: 60px;
     }
-    body{
-    background: linear-gradient(to bottom, #4CB8C4 , #3CD3AD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  }
+    
 }
 
 #footer {
