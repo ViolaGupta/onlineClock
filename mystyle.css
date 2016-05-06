@@ -17,8 +17,9 @@ font-size:90px;
     }
 }
 .clock{
+  z-index: 3;
 margin: auto;
-margin-top: 60px;
+margin-top: 10%;
 border-radius: 10px;
 color:red;
 box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);;
@@ -34,10 +35,11 @@ background-size:cover;
   top:0px;
   padding: 15px;
   margin:auto;
-  z-index:0;
+  z-index:2;
   width:100%;
   font-family: Roboto;
   font-weight: 900;
+  font-size: 2em;
   color: rgba(0, 0, 0, 0.75);
 }
 
@@ -63,8 +65,6 @@ background-color: rgba(255, 255, 255, 0.25);;
 }
 
 #sound{
-margin-left:580px;
-margin-top:20px;
 float:center;
 }
 
@@ -73,9 +73,7 @@ display:inline;
 
 }
 .buttons{
-float:center;
 margin-top:20px;
-margin-left:565px;
 
 }
 .timeList li{
@@ -83,16 +81,12 @@ display:inline;
 }
 
 .timeList{
-float:center;
 margin-top:20px;
-margin-left:565px;
 
 }
 .displayAlarm{
 
-float:center;
 margin-top:20px;
-margin-left:565px;
 width:40px;
 height:40px;
 }
