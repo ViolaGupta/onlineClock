@@ -39,7 +39,7 @@ padding-right: 60px;
 }
 
 .header-fixed {
-  background: #fff;
+  background: #388992;
   position:fixed;
   top:0px;
   left: 0px;
@@ -49,7 +49,7 @@ padding-right: 60px;
   font-family: Roboto;
   font-weight: 900;
   font-size: 2em;
-  color: rgba(0, 0, 0, 0.75);
+  color:#fff;
 }
 
 
