@@ -1,0 +1,76 @@
+body{
+    background: #4CB8C4; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #4CB8C4 , #3CD3AD); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #4CB8C4 , #3CD3AD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+#txt{
+font-family: Roboto;
+font-weight: 900;
+color: rgba(0, 0, 0, 0.75);
+padding:45px;
+font-size:90px;
+padding-left:130px;
+
+}
+.clock{
+float:center;
+margin-top:130px;
+margin-left:400px;
+border-radius: 10px;
+color:red;
+box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);;
+animation: pulse 5s infinite;
+height:200px;
+width:550px;
+background-size:cover;
+}
+
+@keyframes pulse {
+0% {
+background-color: rgba(255, 255, 255, 0.25);;
+}
+
+50% {
+background-color: rgba(255, 255, 255, 0.5);;
+}
+
+100% {
+background-color: rgba(255, 255, 255, 0.25);;
+}
+}
+
+#sound{
+margin-left:580px;
+margin-top:20px;
+float:center;
+}
+
+.buttons li{
+display:inline;
+
+}
+.buttons{
+float:center;
+margin-top:20px;
+margin-left:565px;
+
+}
+.timeList li{
+display:inline;
+}
+
+.timeList{
+float:center;
+margin-top:20px;
+margin-left:565px;
+
+}
+.displayAlarm{
+
+float:center;
+margin-top:20px;
+margin-left:565px;
+width:40px;
+height:40px;
+}
