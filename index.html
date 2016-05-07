@@ -2,7 +2,7 @@
 <html>
 	<head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#333333">
+    <link rel="icon" sizes="192x192" href="tocky-192.png">
 		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:200|900">
 		<link rel="stylesheet" type="text/css" href="mystyle.css">
 		<script>
@@ -55,7 +55,7 @@ document.getElementById("muteicon").src = "Mute.svg";
 	</head>
 	<body onload="startTime()">
 		<div class="header-fixed">
-			<img src="tocky.svg" height="32px" width="32px">
+			<div class="tocky"><img src="tocky.svg" height="32px" width="32px"></div>
 			Tocky
       <div class="right">
       <button id="mute" class="hvr-grow-shadow" type="button" onClick="muteSwap()">
@@ -66,9 +66,7 @@ document.getElementById("muteicon").src = "Mute.svg";
 
 		</div>
 		<div class="clock">
-			<div class="center">
 				<div id="txt">
-				</div>
 			</div>
 			<div class="center">
 				<div class="sound_icon">
