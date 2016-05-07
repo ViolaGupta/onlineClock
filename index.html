@@ -53,7 +53,7 @@ document.getElementById("muteicon").src = "Mute.svg";
 
 		</script>
 	</head>
-	<body onload="startTime()">
+	<body onload="startTime()" alink="#fff" vlink="#fff">
 		<div class="header-fixed">
 			<div class="tocky"><img src="tocky.svg" height="32px" width="32px"></div>
 			Tocky
@@ -79,9 +79,7 @@ document.getElementById("muteicon").src = "Mute.svg";
 						<button class="hvr-grow-shadow" type="button" onClick="setAlarm()">SET ALARM</button>
 						<button class="hvr-grow-shadow" type="button" onclick="cancelAlarm()">CANCEL ALARM</button>
 				</center>
-				<div class="timeList">
-					<ul>
-						<li>
+				<div class="center">
 							<select autofocus id="hour" >
 								<!-- add disabled effect enabled when clicked-->
 								<option value="1">1</option>
@@ -97,8 +95,6 @@ document.getElementById("muteicon").src = "Mute.svg";
 								<option value="11">11</option>
 								<option value="12">12</option>
 							</select>
-						</li>
-						<li>
 							<select autofocus  id="min">
 								<!-- add disabled effect enabled when clicked-->
 								<option value="00">00</option>
@@ -162,14 +158,10 @@ document.getElementById("muteicon").src = "Mute.svg";
 								<option value="58">58</option>
 								<option value="59">59</option>
 							</select>
-						</li>
-						<li>
 							<select id="daytime">
 								<option value="am">AM</option>
 								<option value="pm">PM</option>
 							</select>
-						</li>
-					</ul>
 				</div>
 			</div>
 		</div>
