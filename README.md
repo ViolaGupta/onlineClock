@@ -21,7 +21,7 @@ The ticking noise helps me stay focused on a task. It's a constant reminder to n
 * tears
 * vanilla.js
 
-### Built by
+### Contributors
 
 * [Viola Gupta](https://github.com/violagupta)
 * [Gyan Lakhwani](https://github.com/gyanl)
