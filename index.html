@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
 	<head>
+<<<<<<< HEAD
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
     		<meta name="theme-color" content="#333333">
 		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:900">
+=======
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" sizes="192x192" href="tocky-192.png">
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:200|900">
+>>>>>>> origin/testalarm
 		<link rel="stylesheet" type="text/css" href="mystyle.css">
 <script>
 var myalarm;
@@ -112,22 +118,24 @@ var myalarm;
 
 </script>
 	</head>
-	<body onload="startTime()">
+	<body onload="startTime()" alink="#fff" vlink="#fff">
 		<div class="header-fixed">
-			<img src="tocky.svg" height="32px" width="32px">
+			<div class="tocky"><img src="tocky.svg" height="32px" width="32px"></div>
 			Tocky
       <div class="right">
       <button id="mute" class="hvr-grow-shadow" type="button" onClick="muteSwap()">
+<<<<<<< HEAD
         <div id="show"> <img id="muteicon" src="Unmute.svg" height="28px" width="28px"></div> <!-- Changed the initial icon to unmuted -->
+=======
+        <div id="show"> <img id="muteicon" src="Unmute.svg" height="28px" width="28px"></div>
+>>>>>>> origin/testalarm
 </button>
 </div>
 
 
 		</div>
 		<div class="clock">
-			<div class="center">
 				<div id="txt">
-				</div>
 			</div>
 			<div class="center">
 				<div class="sound_icon">
@@ -140,9 +148,7 @@ var myalarm;
 						<button class="hvr-grow-shadow" type="button" onClick="setAlarm()">SET ALARM</button>
 						<button class="hvr-grow-shadow" type="button" onclick="cancelAlarm()">CANCEL ALARM</button>
 				</center>
-				<div class="timeList">
-					<ul>
-						<li>
+				<div class="center">
 							<select autofocus id="hour" >
 								<!-- add disabled effect enabled when clicked-->
 								<option value="1">1</option>
@@ -158,8 +164,6 @@ var myalarm;
 								<option value="11">11</option>
 								<option value="12">12</option>
 							</select>
-						</li>
-						<li>
 							<select autofocus  id="min">
 								<!-- add disabled effect enabled when clicked-->
 								<option value="00">00</option>
@@ -223,21 +227,21 @@ var myalarm;
 								<option value="58">58</option>
 								<option value="59">59</option>
 							</select>
-						</li>
-						<li>
 							<select id="daytime">
 								<option value="AM">AM</option>
 								<option value="PM">PM</option>
 							</select>
-						</li>
-					</ul>
 				</div>
 			</div>
 		</div>
 		<h3 id="displayAlarm" class="displayAlarm"></h3>
 		<div id="footer">
 			<div id="center">
+<<<<<<< HEAD
 				Made with <div class="heart">♥</div> in New Delhi by<br>Gyan Lakhwani + Manvendra Singh
+=======
+				Made with <div class="heart">♥</div> in New Delhi by<br><a href="https://github.com/gyanl">Gyan Lakhwani</a> + <a href="https://github.com/manu-chroma">Manvendra Singh</a>
+>>>>>>> origin/testalarm
 			</div>
 		</div>
 		<!-- #footer -->
