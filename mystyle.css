@@ -4,8 +4,13 @@ input:focus, textarea:focus, button:focus {
 
 body{
     background: #; /* fallback for old browsers */
+<<<<<<< HEAD
+    background: -webkit-linear-gradient(to left, #4C7CC4 , #3CD3AD); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #4C7CC4 , #3CD3AD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+=======
     background: -webkit-linear-gradient(to left, #4CB8C4 , #3CD3AD); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left, #4CB8C4 , #3CD3AD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+>>>>>>> origin/testalarm
 
 }
 #txt{
@@ -17,7 +22,7 @@ padding: 20px;
 padding-bottom: 10px;
 font-weight: 900;
 color: rgba(0, 0, 0, 0.75);
-font-size:90px;
+font-size:44px;
 }
 
 .tocky{
@@ -38,22 +43,34 @@ background-size:cover;
 
 .right {
 float: right;
+<<<<<<< HEAD
+padding-right: 60px;
+=======
 padding-right: 40px;
+>>>>>>> origin/testalarm
 }
 
 .header-fixed {
-  background: #fff;
+  background: #333333;
   position:fixed;
   top:0px;
   left: 0px;
+<<<<<<< HEAD
+=======
   right: 0px;
+>>>>>>> origin/testalarm
   padding: 15px;
   margin:auto;
   width:100%;
   font-family: Roboto;
   font-weight: 900;
+<<<<<<< HEAD
+  font-size: 2em;
+  color:#fff;
+=======
   font-size: 42px;
   color: #000;
+>>>>>>> origin/testalarm
 }
 
 
@@ -102,9 +119,26 @@ margin-top:20px;
 .displayAlarm{
 
 margin-top:20px;
-width:40px;
-height:40px;
+margin-left:520px;
+width:100%;
 }
+<<<<<<< HEAD
+@media only screen and (max-width: 768px) {
+
+    .clock {
+        width:auto;
+    }
+    .header-fixed {
+      font-size: 40px;
+    }
+    #txt {
+        width:auto;
+        font-size: 60px;
+    }
+
+}
+=======
+>>>>>>> origin/testalarm
 
 #footer {
  font-family: "Roboto";
@@ -115,8 +149,12 @@ height:40px;
  height:auto;
  position:absolute;
  bottom:0;
+<<<<<<< HEAD
+ padding: 15px;
+=======
  padding-top: 15px;
  padding-bottom: 15px;
+>>>>>>> origin/testalarm
  left:0;
  text-align: center;
  font-size: 20px;
