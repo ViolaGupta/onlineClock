@@ -1,4 +1,4 @@
-## vanilla.js
+## TockyClock
 
 TockyClock is a clock app that helps you stay focused on a task. 
 
@@ -23,11 +23,9 @@ The ticking noise helps me stay focused on a task. It's a constant reminder to n
 
 ### Built by
 
-* Viola Gupta
-* Gyan Lakhwani
-* Manvendra Singh
+* [Viola Gupta](https://github.com/violagupta)
+* [Gyan Lakhwani](https://github.com/gyanl)
+* [Manvendra Singh](https://github.com/manu-chroma)
+* [Harshit Budhraja](https://github.com/harshitbudhraja)
 
-### Other credits
-
-* My mom (love you mom)
 
