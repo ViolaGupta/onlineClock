@@ -1,19 +1,14 @@
 <!DOCTYPE html>
 <html>
 	<head>
-<<<<<<< HEAD
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    		<meta name="theme-color" content="#333333">
-		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:900">
-=======
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" sizes="192x192" href="tocky-192.png">
 		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:200|900">
->>>>>>> origin/testalarm
 		<link rel="stylesheet" type="text/css" href="mystyle.css">
 <script>
 var myalarm;
-			function startTime() 
+			function startTime()
 			{
 			    var today = new Date();
 			    var h1 = today.getHours();
@@ -30,26 +25,26 @@ var myalarm;
 			    h + ":" + m + ":" + s + " PM";}
 			    var t = setTimeout(startTime, 500);
 			}
-			
+
 			function soundAlarm()
 			{
 				var audio = new Audio('alarm.mp3');
 				audio.play();
 				setTimeout(
 				function(){
-				if(confirm("ALARM") == true) 
+				if(confirm("ALARM") == true)
 				{
         				audio.pause();
-    				} 
-    				else 
+    				}
+    				else
     				{
         				audio.pause();
         			}
         			},500);
-				
+
 			}
-			
-			
+
+
 			function checkAlarm()
 			{
 				var today = new Date();
@@ -68,15 +63,15 @@ var myalarm;
 				}
 				myalarm = setTimeout(checkAlarm, 500);
 			}
-			
-			function checkTime(i) 
+
+			function checkTime(i)
 			{
 			    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
 			    return i;
 			}
-			
 
-			function checkHrs(i) 
+
+			function checkHrs(i)
 			{
 				if(i==0)	{i=12;}
 			    else if (i>12) {i = i%12}; //convert to 12 hour time
@@ -85,17 +80,17 @@ var myalarm;
 
 			function setAlarm()
 			{
-			    
+
 			    var hour = document.getElementById('hour').value;
 			    var minute = document.getElementById('min').value;
 			    var daytime = document.getElementById('daytime').value;
 			    var audio = document.getElementById('sound');
-			    document.getElementById('displayAlarm').innerHTML = "The alarm is successfully set for " + hour + ":" + minute + " " + daytime; 
-			    
+			    document.getElementById('displayAlarm').innerHTML = "The alarm is successfully set for " + hour + ":" + minute + " " + daytime;
+
 			    checkAlarm();
-			    
+
         		}
-        		
+
         		function cancelAlarm()
         		{
         			clearTimeout(myalarm);
@@ -124,11 +119,8 @@ var myalarm;
 			Tocky
       <div class="right">
       <button id="mute" class="hvr-grow-shadow" type="button" onClick="muteSwap()">
-<<<<<<< HEAD
         <div id="show"> <img id="muteicon" src="Unmute.svg" height="28px" width="28px"></div> <!-- Changed the initial icon to unmuted -->
-=======
-        <div id="show"> <img id="muteicon" src="Unmute.svg" height="28px" width="28px"></div>
->>>>>>> origin/testalarm
+
 </button>
 </div>
 
@@ -237,11 +229,7 @@ var myalarm;
 		<h3 id="displayAlarm" class="displayAlarm"></h3>
 		<div id="footer">
 			<div id="center">
-<<<<<<< HEAD
-				Made with <div class="heart">♥</div> in New Delhi by<br>Gyan Lakhwani + Manvendra Singh
-=======
 				Made with <div class="heart">♥</div> in New Delhi by<br><a href="https://github.com/gyanl">Gyan Lakhwani</a> + <a href="https://github.com/manu-chroma">Manvendra Singh</a>
->>>>>>> origin/testalarm
 			</div>
 		</div>
 		<!-- #footer -->
