@@ -125,6 +125,7 @@ var myalarm;
 </div>
 
 
+		</div><div class="clocktop">
 		</div>
 		<div class="clock">
 				<div id="txt">
@@ -138,9 +139,7 @@ var myalarm;
 				</div>
 				<center>
 						<button class="hvr-grow-shadow" type="button" onClick="setAlarm()">SET ALARM</button>
-						<button class="hvr-grow-shadow" type="button" onclick="cancelAlarm()">CANCEL ALARM</button>
-				</center>
-				<div class="center">
+						<button class="hvr-grow-shadow" type="button" onclick="cancelAlarm()">CANCEL ALARM</button><p>
 							<select autofocus id="hour" >
 								<!-- add disabled effect enabled when clicked-->
 								<option value="1">1</option>
@@ -223,10 +222,14 @@ var myalarm;
 								<option value="AM">AM</option>
 								<option value="PM">PM</option>
 							</select>
-				</div>
+						</center>
+
 			</div>
+			<div id="displayAlarm" class="displayAlarm"></div>
+
 		</div>
-		<h3 id="displayAlarm" class="displayAlarm"></h3>
+
+
 		<div id="footer">
 			<div id="center">
 				Made with <div class="heart">♥</div> in New Delhi

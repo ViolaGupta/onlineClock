@@ -24,16 +24,17 @@ font-size:72px;
   display: inline-block;
 }
 
+.clocktop{
+  margin-top: 108px;
+}
+
 .clock{
 margin: auto;
-margin-top: 112px;
 border-radius: 10px;
-color:red;
 box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);;
 animation: pulse 5s infinite;
 height:auto;
 width:500px;
-background-size:cover;
 }
 
 .right {
@@ -100,12 +101,16 @@ display:inline;
 margin-top:20px;
 
 }
-.displayAlarm{
 
-margin-top:20px;
-margin-left:520px;
-width:100%;
+.displayAlarm{
+  font-family: "Roboto";
+  font-weight: 200;
+  margin: auto;
+text-align: center;
+padding: 24px;
+padding-top: 0px;
 }
+
 
 @media only screen and (max-width: 768px) {
 
@@ -175,7 +180,7 @@ width:100%;
     -webkit-transition-property: box-shadow, transform;
     transition-property: box-shadow, transform;
 }
-.hvr-grow-shadow:hover, .hvr-grow-shadow:focus, .hvr-grow-shadow:active {
+.hvr-grow-shadow:hover, .hvr-grow-shadow:active {
   box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
