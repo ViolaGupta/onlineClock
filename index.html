@@ -52,10 +52,13 @@ var myalarm;
 				var mins = today.getMinutes();
 				var sec = today.getSeconds();
 				var h = document.getElementById('hour').value;
-			    	var m = document.getElementById('min').value;
+			    	
+                var m = document.getElementById('min').value;
 			    	var daytime = document.getElementById('daytime').value;
-			    	var audio = document.getElementById('sound');
-				if(h == hrs && m == mins && sec==0)
+			    h = fix24(h,daytime);	
+                console.log("value of h is " + h);
+                var audio = document.getElementById('sound');
+				if(h == hrs && m == mins)
 				{
 					soundAlarm();
 					cancelAlarm();
@@ -63,7 +66,15 @@ var myalarm;
 				}
 				myalarm = setTimeout(checkAlarm, 500);
 			}
-
+            
+            function fix24(h,daytime) {
+                h= parseInt(h,10);
+//                if(daytime == "AM")
+//                    return h;
+//                else 
+//                    return (h+12);
+                return daytime == "AM" ? h : (h+12);
+            }
 			function checkTime(i)
 			{
 			    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
