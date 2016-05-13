@@ -1,260 +1,269 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" sizes="192x192" href="tocky-192.png">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <script>
+    var myalarm;
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" sizes="192x192" href="tocky-192.png">
-	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto">
-	<link rel="stylesheet" type="text/css" href="mystyle.css">
-	<script>
-		var myalarm;
-		function startTime()
-		{
-			var today = new Date();
-			var h1 = today.getHours();
-			var m = today.getMinutes();
-			var s = today.getSeconds();
-			h = checkHrs(h1);
-			m = checkTime(m);
-			s = checkTime(s);
-			if(h1<12){
-				document.getElementById('txt').innerHTML =
-				h + ":" + m + ":" + s + " AM";}
-				else{
-					document.getElementById('txt').innerHTML =
-					h + ":" + m + ":" + s + " PM";}
-					var t = setTimeout(startTime, 500);
-				}
+    function startTime() {
+        var today = new Date();
+        var h1 = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        h = checkHrs(h1);
+        m = checkTime(m);
+        s = checkTime(s);
+        if (h1 < 12) {
+            document.getElementById('txt').innerHTML =
+                h + ":" + m + ":" + s + " AM";
+        } else {
+            document.getElementById('txt').innerHTML =
+                h + ":" + m + ":" + s + " PM";
+        }
+        var t = setTimeout(startTime, 500);
+    }
 
-				function soundAlarm()
-				{
-					var audio = new Audio('alarm.mp3');
-					audio.play();
-					setTimeout(
-						function(){
-							if(confirm("ALARM") == true)
-							{
-								audio.pause();
-							}
-							else
-							{
-								audio.pause();
-							}
-						},500);
+    function soundAlarm() {
+        var audio = new Audio('alarm.mp3');
+        audio.play();
+        setTimeout(
+            function() {
+                if (confirm("ALARM") == true) {
+                    audio.pause();
+                } else {
+                    audio.pause();
+                }
+            }, 500);
 
-				}
+    }
 
 
-				function checkAlarm()
-				{
-					var today = new Date();
-					var hrs = today.getHours();
-					var mins = today.getMinutes();
-					var sec = today.getSeconds();
-					var h = document.getElementById('hour').value;
-					
-					var m = document.getElementById('min').value;
-					var daytime = document.getElementById('daytime').value;
-					h = fix24(h,daytime);	
-					console.log("value of h is " + h);
-					var audio = document.getElementById('sound');
-					if(h == hrs && m == mins)
-					{
-						soundAlarm();
-						cancelAlarm();
-						return;
-					}
-					myalarm = setTimeout(checkAlarm, 500);
-				}
-				
-				function fix24(h,daytime) {
-					h= parseInt(h,10);
-					return daytime == "AM" ? h : (h+12);
-				}
-				function checkTime(i)
-				{
-			    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-			    return i;
-			}
+    function checkAlarm() {
+        var today = new Date();
+        var hrs = today.getHours();
+        var mins = today.getMinutes();
+        var sec = today.getSeconds();
+        var h = document.getElementById('hour').value;
+
+        var m = document.getElementById('min').value;
+        var daytime = document.getElementById('daytime').value;
+        h = fix24(h, daytime);
+        console.log("value of h is " + h);
+        var audio = document.getElementById('sound');
+        if (h == hrs && m == mins) {
+            soundAlarm();
+            cancelAlarm();
+            return;
+        }
+        myalarm = setTimeout(checkAlarm, 500);
+    }
+
+    function fix24(h, daytime) {
+        h = parseInt(h, 10);
+        return daytime == "AM" ? h : (h + 12);
+    }
+
+    function checkTime(i) {
+        if (i < 10) {
+            i = "0" + i
+        }; // add zero in front of numbers < 10
+        return i;
+    }
 
 
-			function checkHrs(i)
-			{
-				if(i==0)	{i=12;}
-			    else if (i>12) {i = i%12}; //convert to 12 hour time
-			    return i;
-			}
+    function checkHrs(i) {
+        if (i == 0) {
+            i = 12;
+        } else if (i > 12) {
+            i = i % 12
+        }; //convert to 12 hour time
+        return i;
+    }
 
-			function setAlarm()
-			{
+    function setAlarm() {
 
-				var hour = document.getElementById('hour').value;
-				var minute = document.getElementById('min').value;
-				var daytime = document.getElementById('daytime').value;
-				var audio = document.getElementById('sound');
-				document.getElementById('displayAlarm').innerHTML = "The alarm is successfully set for " + hour + ":" + minute + " " + daytime;
+        var hour = document.getElementById('hour').value;
+        var minute = document.getElementById('min').value;
+        var daytime = document.getElementById('daytime').value;
+        var audio = document.getElementById('sound');
+        document.getElementById('displayAlarm').innerHTML = "The alarm is successfully set for " + hour + ":" + minute + " " + daytime;
 
-				checkAlarm();
+        checkAlarm();
 
-			}
+    }
 
-			function cancelAlarm()
-			{
-				clearTimeout(myalarm);
-				document.getElementById('displayAlarm').innerHTML = "";
-			}
+    function cancelAlarm() {
+        clearTimeout(myalarm);
+        document.getElementById('displayAlarm').innerHTML = "";
+    }
 
-			function muteSwap()
-			{
-				if (document.getElementById('sound').muted == true)
-				{
-					document.getElementById('sound').muted = false;
-          				document.getElementById("muteicon").src = "Unmute.svg"; //=:assignment
-          			}
-          			else
-          			{
-          				document.getElementById('sound').muted = true;
-          				document.getElementById("muteicon").src = "Mute.svg";
-          			}
-          		}
+    function muteSwap() {
+        if (document.getElementById('sound').muted == true) {
+            document.getElementById('sound').muted = false;
+            document.getElementById("muteicon").src = "Unmute.svg"; //=:assignment
+        } else {
+            document.getElementById('sound').muted = true;
+            document.getElementById("muteicon").src = "Mute.svg";
+        }
+    }
 
-          	</script>
+    function toggleSound() {
 
+        var audio = document.getElementById("sound");
+        audio.play();
 
-          	<script>
-          		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        if (audio.muted == true) {
+            audio.muted = false;
+            document.getElementById("muteicon").src = "Unmute.svg";
+        } else {
+            audio.muted = true;
+            document.getElementById("muteicon").src = "Mute.svg";
+        }
+        console.log("superb");
+    }
+    </script>
+    <script>
+    (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-          		ga('create', 'UA-72356300-3', 'auto');
-          		ga('send', 'pageview');
+    ga('create', 'UA-72356300-3', 'auto');
+    ga('send', 'pageview');
+    </script>
+</head>
 
-          	</script>
+<body onload="startTime()" alink="#fff" vlink="#fff">
+    <div class="header-fixed">
+        <div class="tocky"><img src="tocky.svg" height="32px" width="32px"></div>
+        Tocky
+        <div class="right">
+            <button id="mute" class="hvr-grow-shadow" type="button" onClick="toggleSound()">
+                <div id="show"> <img id="muteicon" src="Mute.svg" height="28px" width="28px"></div>
+                <!-- Changed the initial icon to muted -->
+            </button>
+        </div>
+    </div>
+    <div class="clocktop">
+    </div>
+    <div class="clock">
+        <div id="txt">
+        </div>
+        <div class="center">
+            <div class="sound_icon">
+                <audio id="sound" loop muted="true">
+                <!-- <audio id="sound" autoplay loop> -->
+                    <source src="Tick-tock.mp3" type="audio/mpeg"> Your browser does not support the audio element.
+                </audio>
+            </div>
+            <center>
+                <button class="hvr-grow-shadow" type="button" onClick="setAlarm()">SET ALARM</button>
+                <button class="hvr-grow-shadow" type="button" onclick="cancelAlarm()">CANCEL ALARM</button>
+                <p>
+                    <select autofocus id="hour">
+                        <!-- add disabled effect enabled when clicked-->
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    <select autofocus id="min">
+                        <!-- add disabled effect enabled when clicked-->
+                        <option value="00">00</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                        <option value="32">32</option>
+                        <option value="33">33</option>
+                        <option value="34">34</option>
+                        <option value="35">35</option>
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                        <option value="40">40</option>
+                        <option value="41">41</option>
+                        <option value="42">42</option>
+                        <option value="43">43</option>
+                        <option value="44">44</option>
+                        <option value="45">45</option>
+                        <option value="46">46</option>
+                        <option value="47">47</option>
+                        <option value="48">48</option>
+                        <option value="49">49</option>
+                        <option value="50">50</option>
+                        <option value="51">51</option>
+                        <option value="52">52</option>
+                        <option value="53">53</option>
+                        <option value="54">54</option>
+                        <option value="55">55</option>
+                        <option value="56">56</option>
+                        <option value="57">57</option>
+                        <option value="58">58</option>
+                        <option value="59">59</option>
+                    </select>
+                    <select id="daytime">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+            </center>
+        </div>
+        <div id="displayAlarm" class="displayAlarm"></div>
+    </div>
+    <div id="footer">
+        <div id="center">
+            Made with
+            <div class="heart">♥</div> in New Delhi
+        </div>
+    </div>
+    <!-- #footer -->
+</body>
 
-          </head>
-          <body onload="startTime()" alink="#fff" vlink="#fff">
-          	<div class="header-fixed">
-          		<div class="tocky"><img src="tocky.svg" height="32px" width="32px"></div>
-          		Tocky
-          		<div class="right">
-          			<button id="mute" class="hvr-grow-shadow" type="button" onClick="muteSwap()">
-          				<div id="show"> <img id="muteicon" src="Unmute.svg" height="28px" width="28px"></div> <!-- Changed the initial icon to unmuted -->
-
-          			</button>
-          		</div>
-
-
-          	</div><div class="clocktop">
-          </div>
-          <div class="clock">
-          	<div id="txt">
-          	</div>
-          	<div class="center">
-          		<div class="sound_icon">
-          			<audio id="sound" autoplay loop>
-          				<source src="Tick-tock.mp3" type="audio/mpeg">
-          					Your browser does not support the audio element.
-          				</audio>
-          			</div>
-          			<center>
-          				<button class="hvr-grow-shadow" type="button" onClick="setAlarm()">SET ALARM</button>
-          				<button class="hvr-grow-shadow" type="button" onclick="cancelAlarm()">CANCEL ALARM</button><p>
-          				<select autofocus id="hour" >
-          					<!-- add disabled effect enabled when clicked-->
-          					<option value="1">1</option>
-          					<option value="2">2</option>
-          					<option value="3">3</option>
-          					<option value="4">4</option>
-          					<option value="5">5</option>
-          					<option value="6">6</option>
-          					<option value="7">7</option>
-          					<option value="8">8</option>
-          					<option value="9">9</option>
-          					<option value="10">10</option>
-          					<option value="11">11</option>
-          					<option value="12">12</option>
-          				</select>
-          				<select autofocus  id="min">
-          					<!-- add disabled effect enabled when clicked-->
-          					<option value="00">00</option>
-          					<option value="01">01</option>
-          					<option value="02">02</option>
-          					<option value="03">03</option>
-          					<option value="04">04</option>
-          					<option value="05">05</option>
-          					<option value="06">06</option>
-          					<option value="07">07</option>
-          					<option value="08">08</option>
-          					<option value="09">09</option>
-          					<option value="10">10</option>
-          					<option value="11">11</option>
-          					<option value="12">12</option>
-          					<option value="13">13</option>
-          					<option value="14">14</option>
-          					<option value="15">15</option>
-          					<option value="16">16</option>
-          					<option value="17">17</option>
-          					<option value="18">18</option>
-          					<option value="19">19</option>
-          					<option value="20">20</option>
-          					<option value="21">21</option>
-          					<option value="22">22</option>
-          					<option value="23">23</option>
-          					<option value="24">24</option>
-          					<option value="25">25</option>
-          					<option value="26">26</option>
-          					<option value="27">27</option>
-          					<option value="28">28</option>
-          					<option value="29">29</option>
-          					<option value="30">30</option>
-          					<option value="31">31</option>
-          					<option value="32">32</option>
-          					<option value="33">33</option>
-          					<option value="34">34</option>
-          					<option value="35">35</option>
-          					<option value="36">36</option>
-          					<option value="37">37</option>
-          					<option value="38">38</option>
-          					<option value="39">39</option>
-          					<option value="40">40</option>
-          					<option value="41">41</option>
-          					<option value="42">42</option>
-          					<option value="43">43</option>
-          					<option value="44">44</option>
-          					<option value="45">45</option>
-          					<option value="46">46</option>
-          					<option value="47">47</option>
-          					<option value="48">48</option>
-          					<option value="49">49</option>
-          					<option value="50">50</option>
-          					<option value="51">51</option>
-          					<option value="52">52</option>
-          					<option value="53">53</option>
-          					<option value="54">54</option>
-          					<option value="55">55</option>
-          					<option value="56">56</option>
-          					<option value="57">57</option>
-          					<option value="58">58</option>
-          					<option value="59">59</option>
-          				</select>
-          				<select id="daytime">
-          					<option value="AM">AM</option>
-          					<option value="PM">PM</option>
-          				</select>
-          			</center>
-
-          		</div>
-          		<div id="displayAlarm" class="displayAlarm"></div>
-
-          	</div>
-
-
-          	<div id="footer">
-          		<div id="center">
-          			Made with <div class="heart">♥</div> in New Delhi
-          		</div>
-          	</div>
-          	<!-- #footer -->
-          </body>
-          </html>
+</html>
