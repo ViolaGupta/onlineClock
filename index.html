@@ -64,6 +64,9 @@
 
     function fix24(h, daytime) {
         h = parseInt(h, 10);
+        if(h == 12 && daytime == "AM")
+          return 0;
+        else 
         return daytime == "AM" ? h : (h + 12);
     }
 
@@ -101,16 +104,6 @@
         document.getElementById('displayAlarm').innerHTML = "";
     }
 
-    function muteSwap() {
-        if (document.getElementById('sound').muted == true) {
-            document.getElementById('sound').muted = false;
-            document.getElementById("muteicon").src = "Unmute.svg"; //=:assignment
-        } else {
-            document.getElementById('sound').muted = true;
-            document.getElementById("muteicon").src = "Mute.svg";
-        }
-    }
-
     function toggleSound() {
 
         var audio = document.getElementById("sound");
@@ -126,6 +119,8 @@
         console.log("superb");
     }
     </script>
+
+
     <script>
     (function(i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;
